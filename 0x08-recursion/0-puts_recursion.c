@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * _puts_recursion - print string with new line
  */
