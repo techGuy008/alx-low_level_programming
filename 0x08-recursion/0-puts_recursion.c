@@ -1,13 +1,14 @@
 #include <stdio.h>
 /**
  * _puts_recursion - print string with new line
- * @s: string to print
+ * @str: string to print
  */
 
-void _puts_recursion (char *str)
+void _puts_recursion(char *str)
 {
 if (*str == '\0')
 {
+printf("\n");
 return;
 }
 printf("%c", *str);
