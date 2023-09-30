@@ -4,16 +4,15 @@
  * @n: number input
  * Return: result number
  */
-double sqrt_recursive(double num, double guess, double epsilon) {
-double guess_squared = guess * guess;
-    
-if (fabs(guess_squared - num) < epsilon) {
-return guess;
+double squareRoot(double num, double guess, double epsilon) {
+double newGuess = 0.5 * (guess + num / guess);
+
+if (guess - newGuess < epsilon && newGuess - guess < epsilon) {
+return newGuess;
 }
 else
 {
-double new_guess = (guess + num / guess) / 2.0;
-return sqrt_recursive(num, new_guess, epsilon);
+return squareRoot(num, newGuess, epsilon);
 }
 }
 double _sqrt_recursion(int n)
@@ -23,5 +22,5 @@ if (n < 0)
 return (-1);
 }
 
-return sqrt_recursive(n, 1.0, 0.000001);
+return squareRoot(n, 1.0, 0.000001);
 }
