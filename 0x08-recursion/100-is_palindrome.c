@@ -2,13 +2,13 @@
 #include <string.h>
 #include <stdbool.h>
 /**
- * isPalRec - returns true if a string is a palindrome
+ * isPalindrome - returns true if a string is a palindrome
  * @str: string input
  * @s: start of string
  * @e: end of string
  * Return: result bool
  */
-bool isPalRec(char str[], int s, int e)
+bool isPalindrome(char str[], int s, int e)
 {
 if (s == e)
 {
@@ -20,7 +20,7 @@ return (false);
 }
 if (s < e + 1)
 {
-return (isPalRec(str, s + 1, e - 1));
+return (isPalindrome(str, s + 1, e - 1));
 }
 return (true);
 }
