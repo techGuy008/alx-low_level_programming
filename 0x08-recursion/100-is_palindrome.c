@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
 /**
  * isPalindrome - returns true if a string is a palindrome
  * @str: string input
@@ -8,21 +5,21 @@
  * @e: end of string
  * Return: result bool
  */
-bool isPalindrome(char str[], int s, int e)
+int isPalindrome(char str[], int s, int e)
 {
 if (s == e)
 {
-return (true);
+return (1);
 }
 if (str[s] != str[e])
 {
-return (false);
+return (0);
 }
 if (s < e + 1)
 {
 return (isPalindrome(str, s + 1, e - 1));
 }
-return (true);
+return (1);
 }
 /**
  * is_palindrome - returns 1 if a string is a palindrome, else return 0
@@ -32,7 +29,7 @@ return (true);
 int is_palindrome(char str[])
 {
 int n = strlen(str);
-bool isValid = isPalindrome(str, 0, n - 1);
+int isValid = isPalindrome(str, 0, n - 1);
 if (n == 0 || isValid)
 {
 return (1);
