@@ -1,20 +1,18 @@
-#include <stdio.h>
-#include <stdbool.h>
 /**
  * isPrime - returns true if the input integer is a prime number
  * @n: number input
  * @i: index input
  * Return: result bool
  */
-bool isPrime(int n, int i)
+int isPrime(int n, int i)
 {
 if (n < 2 || n % i == 0)
 {
-return  (false);
+return  (0);
 }
 if (i * i > n || n == 2)
 {
-return (true);
+return (1);
 }
 return (isPrime(n, i + 1));
 }
