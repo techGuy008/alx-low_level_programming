@@ -16,7 +16,7 @@ if (i * i > n || n == 2)
 {
 return (true);
 }
-return isPrime(n, i + 1);
+return (isPrime(n, i + 1));
 }
 /**
  * is_prime_number - returns 1 if the input is a prime number, else return 0
@@ -25,7 +25,7 @@ return isPrime(n, i + 1);
  */
 int is_prime_number(int n)
 {
-if (isPrime(n,2))
+if (isPrime(n, 2))
 {
 return (1);
 }
