@@ -13,14 +13,14 @@ int _putchar(char c);
  * @s: string to print
  */
 
-void _puts_recursion(char *s);
+void _puts_recursion(char *str);
 
 /**
  * _print_rev_recursion - print string in reverse
  * @s: string to print
  */
 
-void _print_rev_recursion(char *s);
+void _print_rev_recursion(char *str);
 
 /**
  * _strlen_recursion - return string length
