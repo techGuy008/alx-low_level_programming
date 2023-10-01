@@ -1,4 +1,4 @@
-#include "_putchar.c"
+#include "main.h"
 /**
  * _puts_recursion - print string with new line
  * @str: string to print
