@@ -27,7 +27,7 @@ return (1);
 
 if (*str1 == *str2)
 {
-return wildcmp(str1 + 1, str2 + 1);
+return (wildcmp(str1 + 1, str2 + 1));
 }
 
 return (0);
