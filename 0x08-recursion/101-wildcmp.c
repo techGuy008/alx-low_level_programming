@@ -17,7 +17,7 @@ return (0);
 }
 if (*str1 == *str2)
 {
-return areStringsIdentical(str1 + 1, str2 + 1);
+return wildcmp(str1 + 1, str2 + 1);
 } 
 else
 {
