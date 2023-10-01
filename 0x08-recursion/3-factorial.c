@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <string.h>
 /**
  * factorial -  returns the factorial of a given number
  * @n: number input
