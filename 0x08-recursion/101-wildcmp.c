@@ -11,9 +11,9 @@ if (*str1 == '\0' && *str2 == '\0')
 {
 return (1);
 }
-if (*str1 == '\0' || *str2 == '\0')
+if (*str2 == '*')
 {
-return (0);
+return (wildcmp(str1, str2 + 1) || (wildcmp(str1 + 1, str2)));
 }
 if (*str1 == *str2)
 {
@@ -24,3 +24,4 @@ else
 return (0);
 }
 }
+
