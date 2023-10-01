@@ -1,12 +1,11 @@
 #include <stdio.h>
-
 /**
- * _sqrt_recursion -  returns the natural square root of a number
- * @n: number input
+ * squareRoot -  returns the natural square root of a number
+ * @num: number input
+ * @guess: guess input
+ * @epsilon: epsilon input
  * Return: result number
  */
-double _sqrt_recursion(int n)
-{
 double squareRoot(double num, double guess, double epsilon)
 {
 double newGuess = 0.5 * (guess + num / guess);
@@ -20,6 +19,13 @@ else
 return (squareRoot(num, newGuess, epsilon));
 }
 }
+/**
+ * _sqrt_recursion -  returns the natural square root of a number
+ * @n: number input
+ * Return: result number
+ */
+double _sqrt_recursion(int n)
+{
 if (n < 0)
 {
 return (-1);
