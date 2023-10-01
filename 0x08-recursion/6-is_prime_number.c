@@ -1,29 +1,25 @@
 #include <stdio.h>
 #include <stdbool.h>
 /**
- * isPrime - returns true if the input integer is a prime number, otherwise return false
+ * isPrime - returns true if the input integer is a prime number
  * @n: number input
  * @i: index input
  * Return: result bool
  */
 bool isPrime(int n, int i)
 {
-if (n <= 2)
+if (n < 2 || n % i == 0)
 {
-return (n == 2) ? true : false;
+return  (false);
 }
-if (n % i == 0)
+if (i * i > n || n == 2)
 {
-return false;
-}
-if (i * i > n)
-{
-return true;
+return (true);
 }
 return isPrime(n, i + 1);
 }
 /**
- * is_prime_number - returns 1 if the input integer is a prime number, otherwise return 0
+ * is_prime_number - returns 1 if the input is a prime number, else return 0
  * @n: number input
  * Return: result number
  */
@@ -31,7 +27,7 @@ int is_prime_number(int n)
 {
 if (isPrime(n,2))
 {
-return 1;
+return (1);
 }
 
 return (0);
