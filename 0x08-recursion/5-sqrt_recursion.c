@@ -30,6 +30,6 @@ if (n < 0)
 {
 return (-1);
 }
-printf("%d",((int) squareRoot(n, 1.0, 0.000001)));
+printf("%d", ((int) squareRoot(n, 1.0, 0.000001)));
 return (squareRoot(n, 1.0, 0.000001));
 }
