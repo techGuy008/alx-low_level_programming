@@ -6,9 +6,9 @@
  * @epsilon: epsilon input
  * Return: result number
  */
-double squareRoot(double num, double guess, double epsilon)
+int squareRoot(double num, double guess, double epsilon)
 {
-double newGuess = 0.5 * (guess + num / guess);
+int newGuess = 0.5 * (guess + num / guess);
 
 if ((guess - newGuess < epsilon) && (newGuess - guess < epsilon))
 {
@@ -24,12 +24,12 @@ return (squareRoot(num, newGuess, epsilon));
  * @n: number input
  * Return: result number
  */
-double _sqrt_recursion(int n)
+int _sqrt_recursion(int n)
 {
 if (n < 0)
 {
 return (-1);
 }
-printf("%d", ((int) squareRoot(n, 1.0, 0.000001)));
+
 return (squareRoot(n, 1.0, 0.000001));
 }
