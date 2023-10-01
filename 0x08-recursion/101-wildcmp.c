@@ -11,21 +11,16 @@ if (*str1 == '\0' && *str2 == '\0')
 {
 return (1);
 }
-if ((*str1 == '\0' || *str2 == '\0') && (*str1 != '*' && *str2 != '*'))
+if (*str1 == '\0' || *str2 == '\0')
 {
 return (0);
 }
-if (*str1 != '*' && *str2 != '*')
-{
-if (*str1 == *str2)
+if (*str1 == *str2 || *str2 == '*')
 {
 return (wildcmp(str1 + 1, str2 + 1));
-}else
+}
+else
 {
 return (0);
 }
-}
-return (wildcmp(str1, str2 + 1) ||
-wildcmp(str1 + 1, str2) ||
-wildcmp(str1 + 1, str2 + 1)||0);
 }
