@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * squareRoot -  returns the natural square root of a number
  * @num: number input
