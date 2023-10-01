@@ -32,7 +32,7 @@ return (true);
 int is_palindrome(char str[])
 {
 int n = strlen(str);
-bool isValid = isPalRec(str, 0, n - 1);
+bool isValid = isPalindrome(str, 0, n - 1);
 if (n == 0 || isValid)
 {
 return (1);
