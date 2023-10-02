@@ -71,6 +71,6 @@ int is_prime_number(int n);
 
 int is_palindrome(char str[]);
 
-int wildcmp(char *s1, char *s2);
+int wildcmp(const char *str1, const char *str2);
 
 #endif

@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * wildcmp - compares strings and returns 1 if it can be considered identical
  * @str1: string input
