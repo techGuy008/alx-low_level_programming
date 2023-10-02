@@ -1,5 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * convertInt - convert string to integer
+ * @str: string input
+ * Return: result number
+ */
+int convertInt(char str[])
+{
+int num = 0;
+for (int i = 0; str[i] != '\0'; i++)
+{
+if (str[i] >= '0' && str[i] <= '9')
+{
+num = num * 10 + (str[i] - '0');
+}
+else
+{
+printf("Error\n");
+return 1;
+}
+}
+return num;
+}
 
 /**
  * main - multiplies two numbers
@@ -15,8 +37,8 @@ printf("Error\n");
 return (1);
 }
 
-int n1 = atoi(argv[1]);
-int n2 = atoi(argv[2]);
+int n1 = convertInt(argv[1]);
+int n2 = convertInt(argv[2]);
 
 int res = n1 * n2;
 
