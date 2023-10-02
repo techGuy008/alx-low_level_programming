@@ -1,26 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
 /**
- * convertInt - convert string to integer
+ * stringToInt - convert string to integer
  * @str: string input
  * Return: result number
  */
-int convertInt(char str[])
+int stringToInt(const char *str)
 {
-int num = 0;
-for (int i = 0; str[i] != '\0'; i++)
+if (*str == '\0')
 {
-if (str[i] >= '0' && str[i] <= '9')
-{
-num = num * 10 + (str[i] - '0');
+return (0);
 }
-else
-{
-printf("Error\n");
-return 1;
-}
-}
-return num;
+int digit = *str - '0';
+int partialResult = stringToInt(str + 1);
+
+return (partialResult * 10 + digit);
 }
 
 /**
