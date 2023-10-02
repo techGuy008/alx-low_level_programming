@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * stringToInt - convert string to integer
  * @str: string input
