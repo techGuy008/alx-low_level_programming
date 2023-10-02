@@ -1,3 +1,4 @@
+#include "2-strlen_recursion.c"
 /**
  * isPalindrome - returns true if a string is a palindrome
  * @str: string input
@@ -28,7 +29,7 @@ return (1);
  */
 int is_palindrome(char str[])
 {
-int n = strlen(str);
+int n = _strlen_recursion(str);
 int isValid = isPalindrome(str, 0, n - 1);
 if (n == 0 || isValid)
 {
