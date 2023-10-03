@@ -21,8 +21,6 @@ int main(int argc, char *argv[])
     for (int i = 1; i < argc; i++)
     {
         char *arg = argv[i];
-
-        // Check if the argument contains only digits.
         for (int j = 0; arg[j] != '\0'; j++)
         {
             if (!isdigit(arg[j]))
@@ -31,8 +29,6 @@ int main(int argc, char *argv[])
                 return 1;
             }
         }
-
-        // Convert the argument to an integer and add it to the sumVal.
         int n = atoi(arg);
         sumVal += n;
     }
