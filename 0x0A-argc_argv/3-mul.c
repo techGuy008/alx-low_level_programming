@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * _atoi - converts a string to an integer
- * @s: string to be converted
+ * @str: string to be converted
  * Return: int result
  */
 int _atoi(const char *str)
