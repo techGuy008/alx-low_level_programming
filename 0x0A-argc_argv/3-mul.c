@@ -8,29 +8,20 @@
 int _atoi(const char *str)
 {
 int res = 0;
-int sign = 1;
-while (*str == ' ' || *str == '\t')
+
+for (int i = 0; str[i] != '\0'; i++)
 {
-str++;
+if (str[i] >= '0' && str[i] <= '9')
+{
+res = res * 10 + (str[i] - '0');
+}
+else
+{
+return -1;
+}
 }
 
-if (*str == '-')
-{
-sign = -1;
-str++;
-}
-else if (*str == '+')
-{
-str++;
-}
-
-while (*str >= '0' && *str <= '9')
-{
-res = res * 10 + (*str - '0');
-str++;
-}
-
-return res * sign;
+return res;
 }
 
 /**
@@ -41,7 +32,7 @@ return res * sign;
  */
 int main(int argc, char *argv[])
 {
-if (argc != 3)
+if (argc < 3 || argc > 3)
 {
 printf("Error\n");
 return (1);
