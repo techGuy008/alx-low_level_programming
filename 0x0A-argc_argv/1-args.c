@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - prints the number of arguments passed
  * @argc: argument counter
@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[]  __attribute__((unused)))
 {
-if (argc > 0 && argv[0] != NULL)
+if (argc > 0)
 {
 printf("%d", argc);
 }
