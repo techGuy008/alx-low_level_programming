@@ -7,21 +7,23 @@
  */
 int _atoi(const char *str)
 {
-int res = 0;
+int i = 0;
+int n = 0;
+int sign = 1; 
 
-for (int i = 0; str[i] != '\0'; i++)
+if (s[i] == '-')
 {
-if (str[i] >= '0' && str[i] <= '9')
-{
-res = res * 10 + (str[i] - '0');
-}
-else
-{
-return -1;
-}
+sign = -1; 
+i++;
 }
 
-return res;
+while (s[i] >= '0' && s[i] <= '9')
+{
+n = n * 10 + (s[i] - '0');
+i++;
+}
+
+return n * sign; 
 }
 
 /**
