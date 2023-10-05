@@ -13,6 +13,7 @@ char **strtow(char *str)
 {
 int count;
 char *token;
+char **words;
 if (str == NULL || str[0] == '\0')
 {
 return (NULL);
@@ -27,7 +28,7 @@ count++;
 token = strtok(NULL, " ");
 }
 
-char **words = (char **)malloc((count + 1) * sizeof(char *));
+words = (char **)malloc((count + 1) * sizeof(char *));
 
 if (words == NULL)
 {
