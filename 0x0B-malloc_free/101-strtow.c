@@ -19,7 +19,7 @@ return (NULL);
 }
 
 count = 0;
-*token = strtok(str, " ");
+token = strtok(str, " ");
 
 while (token != NULL)
 {
