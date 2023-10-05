@@ -7,15 +7,9 @@ if (size <= 0)
 {
 return NULL;
 }
-
-char *arr = (char *)malloc(size * sizeof(char));
-
-if (arr != NULL)
-{
-for (int i = 0; i < size; i++)
-{
+static char arr[1000];
+for (int i = 0; i < size; i++) {
 arr[i] = c;
-}
 }
 
 return arr;
