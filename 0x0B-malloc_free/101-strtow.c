@@ -9,45 +9,51 @@
  *
  * Return: 0
  */
-
-char *argstostr(int ac, char **av)
+char **strtow(char *str)
 {
-    int length;
-    int i, j, k;
-    char *result;
-    if (ac == 0 || av == NULL)
-    {
-        return NULL;
-    }
+int count;
+char *token;
+if (str == NULL || str[0] == '\0')
+{
+return (NULL);
+}
 
-    length = 0;
+count = 0;
+*token = strtok(str, " ");
 
-    for (i = 0; i < ac; i++)
-    {
-        for (j = 0; av[i][j] != '\0'; j++)
-        {
-            length++;
-        }
-        length++;
-    }
+while (token != NULL)
+{
+count++;
+token = strtok(NULL, " ");
+}
 
-    result = malloc((length + 1) * sizeof(char));
+char **words = (char **)malloc((count + 1) * sizeof(char *));
 
-    if (result == NULL)
-    {
-        return NULL;
-    }
+if (words == NULL)
+{
+return (NULL);
+}
 
-    for (i = 0; i < ac; i++)
-    {
-        for (j = 0; av[i][j] != '\0'; j++)
-        {
-            result[k++] = av[i][j];
-        }
-        result[k++] = '\n';
-    }
+token = strtok(str, " ");
+int i = 0;
+while (token != NULL)
+{
+words[i] = strdup(token);
+if (words[i] == NULL)
+{
 
-    result[k] = '\0';
+for (int j = 0; j < i; j++)
+{
+free(words[j]);
+}
+free(words);
+return (NULL);
+}
+i++;
+token = strtok(NULL, " ");
+}
 
-    return result;
+words[i] = NULL;
+
+return (words);
 }
