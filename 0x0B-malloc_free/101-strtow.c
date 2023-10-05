@@ -21,7 +21,6 @@ char *argstostr(int ac, char **av)
     }
 
     length = 0;
-    i, j, k = 0;
 
     for (i = 0; i < ac; i++)
     {
