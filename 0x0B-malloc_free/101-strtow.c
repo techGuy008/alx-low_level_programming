@@ -10,19 +10,22 @@
 
 char *argstostr(int ac, char **av)
 {
+    int total;
+    int i;
+    char *result;
     if (ac == 0 || av == NULL)
     {
         return NULL;
     }
 
-    int total = 0;
+    total = 0;
 
-    for (int i = 0; i < ac; i++)
+    for (i = 0; i < ac; i++)
     {
         total += strlen(av[i]) + 1;
     }
 
-    char *result = (char *)malloc(total + 1);
+    *result = (char *)malloc(total + 1);
 
     if (result == NULL)
     {
