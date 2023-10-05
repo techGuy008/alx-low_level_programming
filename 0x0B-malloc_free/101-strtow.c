@@ -14,6 +14,7 @@ char **strtow(char *str)
 int count;
 char *token;
 char **words;
+int  j,i;
 if (str == NULL || str[0] == '\0')
 {
 return (NULL);
@@ -36,14 +37,14 @@ return (NULL);
 }
 
 token = strtok(str, " ");
-int i = 0;
+i = 0;
 while (token != NULL)
 {
 words[i] = strdup(token);
 if (words[i] == NULL)
 {
 
-for (int j = 0; j < i; j++)
+for (j = 0; j < i; j++)
 {
 free(words[j]);
 }
