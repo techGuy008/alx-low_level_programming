@@ -2,60 +2,72 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/**
- * argstostr -  concatenates all the arguments
- * @ac: int input
- * @av: double pointer array
- *
- * Return: 0
- */
+
+int count(char *str)
+{
+int a, num = 0;
+
+for (a = 0; str[a] != '\0'; a++)
+{
+if (*str == ' ')
+str++;
+else
+{
+for (; str[a] != ' ' && str[a] != '\0'; a++)
+str++;
+num++;
+}
+}
+return (num);
+}
 char **strtow(char *str)
 {
-int count;
-char *token;
-char **words;
-int  j,i;
-if (str == NULL || str[0] == '\0')
-{
+int total = 0, b = 0, c = 0, length = 0;
+char **words, *found_word;
+
+if (str == 0 || *str == 0)
 return (NULL);
-}
-
-count = 0;
-token = strtok(str, " ");
-
-while (token != NULL)
-{
-count++;
-token = strtok(NULL, " ");
-}
-
-words = (char **)malloc((count + 1) * sizeof(char *));
-
-if (words == NULL)
-{
+total = count(str);
+if (total == 0)
 return (NULL);
+words = malloc((total + 1) * sizeof(char *));
+if (words == 0)
+return (NULL);
+for (; *str != '\0' && b < total;)
+{
+if (*str == ' ')
+str++;
+else
+{
+found_word = str;
+for (; *str != ' ' && *str != '\0';)
+{
+length++;
+str++;
 }
-
-token = strtok(str, " ");
-i = 0;
-while (token != NULL)
+words[b] = malloc((length + 1) * sizeof(char));
+if (words[b] == 0)
 {
-words[i] = strdup(token);
-if (words[i] == NULL)
+int j;
+for (j = b; j > 0;)
 {
-
-for (j = 0; j < i; j++)
-{
-free(words[j]);
+free(words[--j]);
 }
 free(words);
 return (NULL);
 }
-i++;
-token = strtok(NULL, " ");
+while (*found_word != ' ' && *found_word != '\0')
+{
+words[b][c] = *found_word;
+found_word++;
+c++;
 }
-
-words[i] = NULL;
-
+words[b][c] = '\0';
+b++;
+c = 0;
+length = 0;
+str++;
+}
+}
 return (words);
 }
