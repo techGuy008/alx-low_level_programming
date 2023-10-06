@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+void free_all(char **string, int i)
+{
+	for (; i > 0;)
+		free(string[--i]);
+	free(string);
+}
 
 int count(char *str)
 {
@@ -48,12 +54,7 @@ str++;
 words[b] = malloc((length + 1) * sizeof(char));
 if (words[b] == 0)
 {
-int j;
-for (j = b; j > 0;)
-{
-free(words[--j]);
-}
-free(words);
+free_all(words,b);
 return (NULL);
 }
 while (*found_word != ' ' && *found_word != '\0')
