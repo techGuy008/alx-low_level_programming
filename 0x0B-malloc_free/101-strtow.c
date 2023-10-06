@@ -30,13 +30,13 @@ return (num);
 char **strtow(char *str)
 {
 int total,b,length,c; 
-char **words,*found_word;
+char **words, *found_word;
 if (!str || !*str)
 return NULL;
  total = count(str);
 if (total == 0)
 return NULL;
- **words = malloc((total + 1) * sizeof(char *));
+ words = malloc((total_words + 1) * sizeof(char *));
 if (!words)
 return NULL;
  b = 0;
