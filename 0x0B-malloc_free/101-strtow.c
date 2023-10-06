@@ -45,7 +45,6 @@ char **strtow(char *str)
 {
 int total = 0, b = 0, c = 0, length = 0;
 char **words, *found_word;
-
 if (str == 0 || *str == 0)
 return (NULL);
 total = count(str);
@@ -79,11 +78,10 @@ found_word++;
 c++;
 }
 words[b][c] = '\0';
-b++; 
-c = 0; 
-length = 0; 
+b++;
+c = 0;
+length = 0;
 str++;
-}
-}
+}}
 return (words);
 }
