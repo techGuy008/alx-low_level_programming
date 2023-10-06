@@ -36,7 +36,7 @@ return NULL;
  total = count(str);
 if (total == 0)
 return NULL;
- words = malloc((total_words + 1) * sizeof(char *));
+ words = malloc((total + 1) * sizeof(char *));
 if (!words)
 return NULL;
  b = 0;
