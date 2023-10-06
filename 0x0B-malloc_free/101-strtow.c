@@ -4,9 +4,9 @@
 #include <string.h>
 void free_all(char **string, int i)
 {
-	for (; i > 0;)
-		free(string[--i]);
-	free(string);
+for (; i > 0;)
+free(string[--i]);
+free(string);
 }
 
 int count(char *str)
@@ -26,38 +26,41 @@ num++;
 }
 return (num);
 }
+
 char **strtow(char *str)
 {
-int total = 0, b = 0, c = 0, length = 0;
-char **words, *found_word;
-
-if (str == 0 || *str == 0)
-return (NULL);
-total = count(str);
+int total,b,length,c; 
+char **words,*found_word;
+if (!str || !*str)
+return NULL;
+ total = count(str);
 if (total == 0)
-return (NULL);
-words = malloc((total + 1) * sizeof(char *));
-if (words == 0)
-return (NULL);
-for (; *str != '\0' && b < total;)
+return NULL;
+ **words = malloc((total + 1) * sizeof(char *));
+if (!words)
+return NULL;
+ b = 0;
+while (*str)
 {
-if (*str == ' ')
+while (*str && *str == ' ')
 str++;
-else
+if (*str && *str != ' ')
 {
-found_word = str;
-for (; *str != ' ' && *str != '\0';)
+ *found_word = str;
+ length = 0;
+while (*str && *str != ' ')
 {
 length++;
 str++;
 }
 words[b] = malloc((length + 1) * sizeof(char));
-if (words[b] == 0)
+if (!words[b])
 {
 free_all(words, b);
-return (NULL);
+return NULL;
 }
-while (*found_word != ' ' && *found_word != '\0')
+ c = 0;
+while (*found_word && *found_word != ' ')
 {
 words[b][c] = *found_word;
 found_word++;
@@ -65,10 +68,8 @@ c++;
 }
 words[b][c] = '\0';
 b++;
-c = 0;
-length = 0;
-str++;
 }
 }
-return (words);
+words[b] = NULL;
+return words;
 }
