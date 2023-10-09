@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 
@@ -10,16 +9,16 @@
  *
  * Return: pointer to the memory area s
  */
-void *_memset(void *s, int c, size_t n)
+char *_memset(char *s, char b, unsigned int n)
 {
-    unsigned char *p = s;
-    while (n > 0)
+    unsigned int i;
+
+    for (i = 0; i < n; i++)
     {
-        *p = (unsigned char)c;
-        p++;
-        n--;
+        s[i] = b;
     }
-    return s;
+
+    return (s);
 }
 
 /**
@@ -29,18 +28,19 @@ void *_memset(void *s, int c, size_t n)
  *
  * Return: pointer to allocated memory
  */
-void *_calloc(size_t nmemb, size_t size)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
+    char *pointer;
+
     if (nmemb == 0 || size == 0)
-        return NULL;
+        return (NULL);
 
-    size_t total_size = nmemb * size;
-    void *ptr = malloc(total_size);
+    pointer = malloc(size * nmemb);
 
-    if (ptr == NULL)
-        return NULL;
+    if (pointer == NULL)
+        return (NULL);
 
-    _memset(ptr, 0, total_size);
+    _memset(pointer, 0, nmemb * size);
 
-    return ptr;
+    return (pointer);
 }
