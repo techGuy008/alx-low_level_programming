@@ -29,8 +29,8 @@ return (1 + _strlen(str + 1));
  */
 int is_digit(char *s)
 {
-int i = 0;
-
+int i;
+i = 0;
 while (s[i])
 {
 if (s[i] < '0' || s[i] > '9')
@@ -49,7 +49,6 @@ void errors(void)
 printf("Error\n");
 exit(98);
 }
-
 /**
  * main - multiplies two positive numbers
  * @argc: number of arguments
