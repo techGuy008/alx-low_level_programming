@@ -24,7 +24,6 @@ if (new_size == 0 && ptr)
 free(ptr);
 return (NULL);
 }
-
 if (!ptr)
 {
 return (malloc(new_size));
@@ -35,7 +34,6 @@ if (!pointer1)
 return (NULL);
 }
 pointer_old = ptr;
-
 if (new_size < old_size)
 {
 for (i = 0; i < new_size; i++)
@@ -43,7 +41,6 @@ for (i = 0; i < new_size; i++)
 pointer1[i] = pointer_old[i];
 }
 }
-
 if (new_size > old_size)
 {
 for (i = 0; i < old_size; i++)
@@ -51,7 +48,6 @@ for (i = 0; i < old_size; i++)
 pointer1[i] = pointer_old[i];
 }
 }
-
 free(ptr);
 return (pointer1);
 }
