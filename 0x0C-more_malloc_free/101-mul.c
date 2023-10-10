@@ -75,12 +75,10 @@ if (!result)
 {
 return 1;
 }
-
 for (int i = 0; i <= len1 + len2; i++)
 {
 result[i] = 0;
 }
-
 for (int i = len1 - 1; i >= 0; i--)
 {
 digit1 = s1[i] - '0';
@@ -110,12 +108,10 @@ if (a)
 putchar(result[i] + '0');
 }
 }
-
 if (!a)
 {
 putchar('0');
 }
-
 putchar('\n');
 free(result);
 return 0;
